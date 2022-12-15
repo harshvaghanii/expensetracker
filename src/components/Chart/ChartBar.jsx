@@ -1,9 +1,8 @@
-const ChartBar = ({ dataPoint }) => {
+const ChartBar = (dataPoint) => {
   let barFillHeight = "0%";
 
   if (dataPoint.max > 0) {
-    barFillHeight =
-      Math.round((dataPoint.value / dataPoint.maxValue) * 100) + "%";
+    barFillHeight = Math.round((dataPoint.value / dataPoint.max) * 100) + "%";
   }
 
   return (
@@ -16,7 +15,7 @@ const ChartBar = ({ dataPoint }) => {
           }}
         ></div>
       </div>
-      <div className="chart-bar__label"></div>
+      <div className="chart-bar__label">{dataPoint.label}</div>
     </div>
   );
 };

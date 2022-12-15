@@ -38,8 +38,8 @@ const ExpenseForm = ({ onSaveExpenseData, showFormHandler }) => {
   const submitHandler = (event) => {
     event.preventDefault();
     const userData = {
-      description: enteredTitle,
-      price: enteredAmount,
+      title: enteredTitle,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
     onSaveExpenseData(userData);
